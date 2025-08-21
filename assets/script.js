@@ -9,7 +9,7 @@ async function cargarPlanetas() {
 
     lista.innerHTML = '';
 
-    planetas.forEach(planeta => {
+    planetas.forEach(planeta => { /* absorbe todos los datos de la variable y , por cada planeta, crea una tarjeta con su nombre e imagen */
       const card = document.createElement('div');
       card.className = 'planeta-card';
       card.innerHTML = `
@@ -20,7 +20,7 @@ async function cargarPlanetas() {
       `;
       lista.appendChild(card);
     });
-  } catch (error) {
+  } catch (error) { /*de lo contrario, mostrara un mensaje de error */
     const lista = document.getElementById('planetasLista');
     if (lista) {
       lista.innerHTML = '<p>Error cargando planetas.</p>';
@@ -36,7 +36,7 @@ function getPlanetIdFromUrl() {
   return parseInt(params.get('id')) || 1;
 }
 
-async function loadPlanet(planetId = 1) {
+async function loadPlanet(planetId = 1) { /*cargara todos los planetas desde la api y los "invocara" segun su ID */
   try {
     const response = await fetch(`https://dragonball-api.com/api/planets/${planetId}`);
     const data = await response.json();
@@ -60,7 +60,7 @@ async function loadPlanet(planetId = 1) {
     const navigation = document.createElement("div");
     navigation.className = "pagination";
 
-    if (planetId > 1) {
+    if (planetId > 1) { /*flecha para desplazarse al anterior planeta */
       const prevBtn = document.createElement("button");
       prevBtn.textContent = "⬅️ Anterior";
       prevBtn.onclick = () => {
@@ -71,7 +71,7 @@ async function loadPlanet(planetId = 1) {
 
     const maxPlanets = 20; // Esta vaina ajusta la cantidad maxima de planetas
 
-    if (planetId < maxPlanets) {
+    if (planetId < maxPlanets) { /*flecha para desplazarse al siguiente planeta */
       const nextBtn = document.createElement("button");
       nextBtn.textContent = "Siguiente ➡️";
       nextBtn.onclick = () => {
@@ -82,7 +82,7 @@ async function loadPlanet(planetId = 1) {
 
     container.appendChild(navigation);
 
-  } catch (error) {
+  } catch (error) { /* si no encuentra el planeta, mostrara un mensaje diciendo "Error cargando planeta." */
     const container = document.getElementById("planets");
     if (container) {
       container.innerHTML = "<p>Error cargando planeta.</p>";
