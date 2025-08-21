@@ -1,11 +1,9 @@
-/* ===========================
-   Esta vaina carga y muestra los planetas en el index.html
-   =========================== */
+/* Esta vaina carga y muestra los planetas en el index.html */
 async function cargarPlanetas() {
   try {
     const response = await fetch('https://dragonball-api.com/api/planets');
     const data = await response.json();
-    const planetas = data.items || data; /* reescribe la variable "planets" como "planetas" */
+    const planetas = data.items || data; /* reescribe la variable "planets" como "planetas" y carga toda la data de*/
     const lista = document.getElementById('planetasLista');
     if (!lista) return; // Solo ejecuta en index.html
 
