@@ -5,7 +5,7 @@ async function cargarPlanetas() {
   try {
     const response = await fetch('https://dragonball-api.com/api/planets');
     const data = await response.json();
-    const planetas = data.items || data;
+    const planetas = data.items || data; /* reescribe la variable "planets" como "planetas" */
     const lista = document.getElementById('planetasLista');
     if (!lista) return; // Solo ejecuta en index.html
 
