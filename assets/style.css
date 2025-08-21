@@ -1,44 +1,30 @@
-/* ===========================
-   Estilos Generales
-   Paleta inspirada en Dragon Ball Z:
-   - Fondo oscuro
-   - Naranja neón (#FF9800)
-   - Verde neón (#00FFB0)
-   - Azul eléctrico (#00BFFF)
-   - Morado oscuro (#2D0036)
-   - Amarillo neón (#FFF200)
-   - Blanco para contraste
-   =========================== */
-@import url('https://fonts.cdnfonts.com/css/minecraftia');
+/* Colores usados: Naranja neon (#FF9800), Verde neon (#00FFB0), azul electrico (#00BFFF), Morado oscuro (#2D0036), Amarillo neón (#FFF200) y el blanco para el contraste*/
 
-/* ===========================
-   Generales
-   =========================== */
+@import url('https://fonts.cdnfonts.com/css/minecraftia'); /* Esta vaina importa la fuente usada en la pag */
+
+/* Estilo inicial*/
 body {
   margin: 0;
   padding: 0;
   font-family: 'Minecraftia', 'Segoe UI', Arial, sans-serif;
-  background: #181028; /* Fondo oscuro */
-  color: #FFF200;      /* Amarillo neón */
+  background: #181028; /* Esto es para el fondo oscuro */
+  color: #FFF200;      /* Este es el amarillo neón */
   min-height: 100vh;
   letter-spacing: 1.5px;
 }
-/* ===========================
-   Títulos
-   =========================== */
+
+/* Para los titulos*/
 h1 {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
   font-size: 2.2rem;
-  color: #FF9800; /* Naranja neón */
+  color: #FF9800; /* el cod del naranja neón */
   text-shadow: 0 0 10px #FF9800, 0 0 20px #FFF200;
   letter-spacing: 2px;
 }
 
-/* ===========================
-   Grid de Planetas (index.html)
-   =========================== */
+/* Esta joda "refleja" el grid de los planetas */
 .planetas-lista {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -49,7 +35,7 @@ h1 {
 
 .planeta-card {
   text-align: center;
-  border: 2px solid #00BFFF; /* Azul eléctrico */
+  border: 2px solid #00BFFF; /* el cod del azul eléctrico */
   border-radius: 14px;
   padding: 18px 10px 15px 10px;
   background: linear-gradient(135deg, #2D0036 80%, #00FFB0 100%);
@@ -92,9 +78,7 @@ h1 {
   text-shadow: 0 0 10px #00FFB0;
 }
 
-/* ===========================
-   Responsive Grid
-   =========================== */
+/* Esto acomoda automaticamente la pagina, es el responsive */
 @media (max-width: 1200px) {
   .planetas-lista {
     grid-template-columns: repeat(3, 1fr);
@@ -116,9 +100,7 @@ h1 {
   }
 }
 
-/* ===========================
-   Detalle de Planeta (planetas.html)
-   =========================== */
+/* Lo que muestra la descripcion de los planetas en planetas.html */
 .planeta-info {
   text-align: center;
   margin-top: 40px;
@@ -152,9 +134,7 @@ h1 {
   box-shadow: 0 0 10px #00BFFF44;
 }
 
-/* ===========================
-   Paginación
-   =========================== */
+/* Esta vaina es la paginacion */
 .pagination {
   margin-top: 20px;
 }

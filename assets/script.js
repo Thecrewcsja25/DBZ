@@ -1,5 +1,5 @@
 /* ===========================
-   Cargar y mostrar planetas en index.html
+   Esta vaina carga y muestra los planetas en el index.html
    =========================== */
 async function cargarPlanetas() {
   try {
@@ -32,9 +32,7 @@ async function cargarPlanetas() {
 
 cargarPlanetas();
 
-/* ===========================
-   Mostrar detalle de planeta en planetas.html
-   =========================== */
+/* Esta vaina muestra la respectiva descripcion de los planetas */
 function getPlanetIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return parseInt(params.get('id')) || 1;
@@ -50,7 +48,7 @@ async function loadPlanet(planetId = 1) {
 
     container.innerHTML = "";
 
-    // Crear tarjeta de información del planeta
+    // Esta cosa genera la tarjeta con la informacion del planeta
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
@@ -60,7 +58,7 @@ async function loadPlanet(planetId = 1) {
     `;
     container.appendChild(card);
 
-    // Controles de paginación
+    // Los controladorees de la paginacion
     const navigation = document.createElement("div");
     navigation.className = "pagination";
 
@@ -73,7 +71,7 @@ async function loadPlanet(planetId = 1) {
       navigation.appendChild(prevBtn);
     }
 
-    const maxPlanets = 20; // Ajusta según la cantidad real de planetas
+    const maxPlanets = 20; // Esta vaina ajusta la cantidad maxima de planetas
 
     if (planetId < maxPlanets) {
       const nextBtn = document.createElement("button");
@@ -94,7 +92,7 @@ async function loadPlanet(planetId = 1) {
   }
 }
 
-// Ejecutar solo si existe el contenedor de detalle
+// Y esto ejecuta la carga de la info del planeta, solo si existe el contenedor
 if (document.getElementById("planets")) {
   const planetId = getPlanetIdFromUrl();
   loadPlanet(planetId);
